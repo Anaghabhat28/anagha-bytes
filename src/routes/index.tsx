@@ -177,12 +177,10 @@ function HomePage() {
             <h3 className="text-lg font-semibold text-foreground">Areas of interest</h3>
             <ul className="mt-4 flex flex-wrap gap-2">
               {interests.map((item) => (
-                <li
-                  key={item}
-                  className="rounded-full border border-border bg-secondary px-3 py-1 text-sm text-secondary-foreground"
-                >
+                <li key={item} className="chip">
                   {item}
                 </li>
+
               ))}
             </ul>
             <Link
