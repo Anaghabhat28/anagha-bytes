@@ -28,18 +28,32 @@ const interests = skillGroups.find((g) => g.title === "Areas of Interest")?.item
 function HomePage() {
   return (
     <>
-      <section aria-labelledby="hero-heading" className="border-b border-border bg-background">
-        <div className="container-page grid gap-12 py-16 md:grid-cols-[1.2fr_0.8fr] md:items-center md:py-24">
-          <div>
+      <section
+        aria-labelledby="hero-heading"
+        className="relative overflow-hidden border-b border-border bg-background"
+      >
+        <div aria-hidden="true" className="dot-grid absolute inset-0 opacity-30" />
+        <div
+          aria-hidden="true"
+          className="glow-orb left-[-6rem] top-[-6rem] size-80 animate-float"
+        />
+        <div
+          aria-hidden="true"
+          className="glow-orb bottom-[-8rem] right-[-4rem] size-96 animate-float opacity-25"
+        />
+        <div className="container-page relative grid gap-12 py-16 md:grid-cols-[1.2fr_0.8fr] md:items-center md:py-24">
+          <div className="animate-rise">
             <p className="eyebrow">Portfolio</p>
             <h1
               id="hero-heading"
-              className="mt-3 text-4xl font-semibold leading-tight text-foreground sm:text-5xl"
+              className="mt-3 text-4xl font-semibold leading-tight sm:text-5xl gradient-text"
             >
               {profile.name}
             </h1>
+            <div aria-hidden="true" className="accent-rule mt-4" />
             <p className="mt-4 text-xl font-medium text-foreground">{profile.title}</p>
             <p className="mt-2 text-base text-accent">{profile.tagline}</p>
+
 
             <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground">
               I am a {education.year} {education.branch} student at {education.institution},
