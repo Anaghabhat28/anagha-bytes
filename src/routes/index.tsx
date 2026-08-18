@@ -110,28 +110,33 @@ function HomePage() {
             </ul>
           </div>
 
-          <figure className="m-0">
-            <div className="relative overflow-hidden rounded-2xl border border-border bg-surface shadow-card">
+          <figure className="animate-rise m-0">
+            <div className="group relative overflow-hidden rounded-3xl border border-border bg-surface shadow-card transition-transform duration-500 hover:rotate-0 md:rotate-2">
               <img
                 src={heroImage}
                 alt=""
                 width={1200}
                 height={1200}
-                className="h-full w-full object-cover opacity-70"
+                className="h-full w-full object-cover opacity-70 transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 flex items-center justify-center">
                 <p
                   aria-hidden="true"
-                  className="font-display text-5xl font-bold text-surface-foreground"
+                  className="font-display text-6xl font-bold tracking-tight text-surface-foreground"
                 >
                   JAB
                 </p>
               </div>
+              <div
+                aria-hidden="true"
+                className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-surface/80 to-transparent"
+              />
             </div>
-            <figcaption className="mt-3 text-center text-xs text-muted-foreground">
+            <figcaption className="mt-4 text-center text-xs text-muted-foreground">
               Profile photo placeholder — replace with a photo of {profile.name}.
             </figcaption>
           </figure>
+
         </div>
       </section>
 
