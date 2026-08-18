@@ -28,18 +28,32 @@ const interests = skillGroups.find((g) => g.title === "Areas of Interest")?.item
 function HomePage() {
   return (
     <>
-      <section aria-labelledby="hero-heading" className="border-b border-border bg-background">
-        <div className="container-page grid gap-12 py-16 md:grid-cols-[1.2fr_0.8fr] md:items-center md:py-24">
-          <div>
+      <section
+        aria-labelledby="hero-heading"
+        className="relative overflow-hidden border-b border-border bg-background"
+      >
+        <div aria-hidden="true" className="dot-grid absolute inset-0 opacity-30" />
+        <div
+          aria-hidden="true"
+          className="glow-orb left-[-6rem] top-[-6rem] size-80 animate-float"
+        />
+        <div
+          aria-hidden="true"
+          className="glow-orb bottom-[-8rem] right-[-4rem] size-96 animate-float opacity-25"
+        />
+        <div className="container-page relative grid gap-12 py-16 md:grid-cols-[1.2fr_0.8fr] md:items-center md:py-24">
+          <div className="animate-rise">
             <p className="eyebrow">Portfolio</p>
             <h1
               id="hero-heading"
-              className="mt-3 text-4xl font-semibold leading-tight text-foreground sm:text-5xl"
+              className="mt-3 text-4xl font-semibold leading-tight sm:text-5xl gradient-text"
             >
               {profile.name}
             </h1>
+            <div aria-hidden="true" className="accent-rule mt-4" />
             <p className="mt-4 text-xl font-medium text-foreground">{profile.title}</p>
             <p className="mt-2 text-base text-accent">{profile.tagline}</p>
+
 
             <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground">
               I am a {education.year} {education.branch} student at {education.institution},
@@ -96,28 +110,33 @@ function HomePage() {
             </ul>
           </div>
 
-          <figure className="m-0">
-            <div className="relative overflow-hidden rounded-2xl border border-border bg-surface shadow-card">
+          <figure className="animate-rise m-0">
+            <div className="group relative overflow-hidden rounded-3xl border border-border bg-surface shadow-card transition-transform duration-500 hover:rotate-0 md:rotate-2">
               <img
                 src={heroImage}
                 alt=""
                 width={1200}
                 height={1200}
-                className="h-full w-full object-cover opacity-70"
+                className="h-full w-full object-cover opacity-70 transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 flex items-center justify-center">
                 <p
                   aria-hidden="true"
-                  className="font-display text-5xl font-bold text-surface-foreground"
+                  className="font-display text-6xl font-bold tracking-tight text-surface-foreground"
                 >
                   JAB
                 </p>
               </div>
+              <div
+                aria-hidden="true"
+                className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-surface/80 to-transparent"
+              />
             </div>
-            <figcaption className="mt-3 text-center text-xs text-muted-foreground">
+            <figcaption className="mt-4 text-center text-xs text-muted-foreground">
               Profile photo placeholder — replace with a photo of {profile.name}.
             </figcaption>
           </figure>
+
         </div>
       </section>
 
@@ -158,12 +177,10 @@ function HomePage() {
             <h3 className="text-lg font-semibold text-foreground">Areas of interest</h3>
             <ul className="mt-4 flex flex-wrap gap-2">
               {interests.map((item) => (
-                <li
-                  key={item}
-                  className="rounded-full border border-border bg-secondary px-3 py-1 text-sm text-secondary-foreground"
-                >
+                <li key={item} className="chip">
                   {item}
                 </li>
+
               ))}
             </ul>
             <Link

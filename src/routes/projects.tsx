@@ -33,17 +33,25 @@ function ProjectsPage() {
 
       <div className="container-page py-16">
         <ul className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project) => (
+          {projects.map((project, index) => (
             <li key={project.slug}>
-              <article className="card-surface-interactive flex h-full flex-col overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.imageAlt}
-                  loading="lazy"
-                  width={1024}
-                  height={640}
-                  className="aspect-video w-full object-cover"
-                />
+              <article className="card-surface-interactive group flex h-full flex-col overflow-hidden">
+                <div className="relative overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.imageAlt}
+                    loading="lazy"
+                    width={1024}
+                    height={640}
+                    className="aspect-video w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <span
+                    aria-hidden="true"
+                    className="absolute left-4 top-4 inline-flex size-9 items-center justify-center rounded-full bg-surface/90 font-display text-sm font-bold text-surface-foreground"
+                  >
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                </div>
                 <div className="flex flex-1 flex-col p-6">
                   <h2 className="text-lg font-semibold text-foreground">{project.title}</h2>
                   <p className="mt-1 text-sm font-medium text-accent">{project.subtitle}</p>
@@ -56,14 +64,12 @@ function ProjectsPage() {
                   </h3>
                   <ul className="mt-2 flex flex-wrap gap-2">
                     {project.technologies.map((tech) => (
-                      <li
-                        key={tech}
-                        className="rounded-full border border-border bg-secondary px-3 py-1 text-xs text-secondary-foreground"
-                      >
+                      <li key={tech} className="chip text-xs">
                         {tech}
                       </li>
                     ))}
                   </ul>
+
 
                   <div className="mt-6 flex flex-wrap gap-3">
                     {project.github ? (

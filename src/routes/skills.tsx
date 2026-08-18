@@ -32,24 +32,28 @@ function SkillsPage() {
 
       <div className="container-page py-16">
         <div className="grid gap-6 md:grid-cols-2">
-          {skillGroups.map((group) => (
+          {skillGroups.map((group, index) => (
             <section
               key={group.title}
               aria-labelledby={`skill-${group.title.replace(/\s|&/g, "-").toLowerCase()}`}
-              className="card-surface-interactive p-6"
+              className="card-surface-interactive relative overflow-hidden p-6"
             >
+              <span
+                aria-hidden="true"
+                className="pointer-events-none absolute -right-2 top-1 font-display text-6xl font-bold text-accent/10"
+              >
+                {String(index + 1).padStart(2, "0")}
+              </span>
               <h2
                 id={`skill-${group.title.replace(/\s|&/g, "-").toLowerCase()}`}
-                className="text-lg font-semibold text-foreground"
+                className="relative text-lg font-semibold text-foreground"
               >
                 {group.title}
               </h2>
-              <ul className="mt-4 flex flex-wrap gap-2">
+              <div aria-hidden="true" className="accent-rule mt-3 w-10" />
+              <ul className="relative mt-4 flex flex-wrap gap-2">
                 {group.items.map((item) => (
-                  <li
-                    key={item}
-                    className="rounded-lg border border-border bg-secondary px-3 py-1.5 text-sm font-medium text-secondary-foreground"
-                  >
+                  <li key={item} className="chip">
                     {item}
                   </li>
                 ))}
@@ -57,6 +61,7 @@ function SkillsPage() {
             </section>
           ))}
         </div>
+
 
         <p className="mt-10 max-w-2xl text-sm leading-relaxed text-muted-foreground">
           These are the technologies and topics I have worked with as part of coursework, projects,
