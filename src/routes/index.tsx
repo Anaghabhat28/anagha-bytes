@@ -125,7 +125,7 @@ function HomePage() {
         <h2 id="featured-heading" className="text-2xl font-semibold text-foreground">
           Featured project
         </h2>
-        <div className="mt-6 grid gap-6 sm:grid-cols-2">
+        <div className="mt-6 grid items-start gap-6 sm:grid-cols-2">
           {featured.map((project) => (
             <article key={project.slug} className="card-surface-interactive overflow-hidden">
               <img

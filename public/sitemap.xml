@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- TODO: replace BASE_URL with the published site URL once the project has a domain. -->
+<urlset xmlns="http://www.sitemap.org/schemas/sitemap/0.9">
+  <url><loc>/</loc></url>
+  <url><loc>/about</loc></url>
+  <url><loc>/skills</loc></url>
+  <url><loc>/projects</loc></url>
+  <url><loc>/certifications</loc></url>
+  <url><loc>/experience</loc></url>
+  <url><loc>/contact</loc></url>
+</urlset>
