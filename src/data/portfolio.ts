@@ -149,6 +149,7 @@ export const internships: Activity[] = [
 ];
 
 export const experienceAreas: string[] = [
+  "Web development internship",
   "Technical projects",
   "Hackathons",
   "Online courses",
