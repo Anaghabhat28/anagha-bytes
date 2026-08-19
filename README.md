@@ -49,6 +49,10 @@ Canara Engineering College, Bantwal
 * **GitHub:** https://github.com/Anaghabhat28
 * **LinkedIn:** https://www.linkedin.com/in/j-anagha-bhat-81557936a/
 
+## 🌐 Live Portfolio
+
+  Visit My Portfolio: "https://anagha-bytes.vercel.app/"
+
 ## 📌 Project Purpose
 
 This portfolio was developed to present my technical skills, projects, certifications, and professional profile in one place.
