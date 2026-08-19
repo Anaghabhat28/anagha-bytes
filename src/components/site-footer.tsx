@@ -47,9 +47,7 @@ export function SiteFooter() {
           </li>
         </ul>
       </div>
-      <div className="container-page pb-8 text-xs text-muted-foreground">
-        <p>Built with semantic HTML and accessibility in mind.</p>
-      </div>
+      
     </footer>
   );
 }
