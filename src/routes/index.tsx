@@ -121,9 +121,7 @@ function HomePage() {
                 className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
             </div>
-            <figcaption className="mt-4 text-center text-xs text-muted-foreground">
-              Illustrated avatar — a creative, non-photographic portrait.
-            </figcaption>
+            
           </figure>
 
 
