@@ -1,8 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Github, Linkedin, Mail, MapPin } from "lucide-react";
 
-import heroImage from "@/assets/hero-abstract.jpg";
+import avatarImage from "@/assets/avatar.jpg";
 import { education, profile, projects, skillGroups } from "@/data/portfolio";
+
 
 const title = "J Anagha Bhat | Computer Science & Engineering Student";
 const description =
