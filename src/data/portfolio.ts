@@ -93,6 +93,7 @@ export const projects: Project[] = [
     technologies: ["HTML5", "CSS", "JavaScript"],
     image: portfolioImage,
     imageAlt: "Illustration of a website layout wireframe with placeholder blocks.",
+     github: "https://github.com/Anaghabhat28/anagha-bytes.git",
   },
 ];
 
