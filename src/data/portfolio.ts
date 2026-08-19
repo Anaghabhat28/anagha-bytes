@@ -13,7 +13,7 @@ export const profile = {
   tagline: "Aspiring Software Developer | Web Developer | AI & Technology Enthusiast",
   location: "Karnataka, India",
   email: "anaghabhat2006@gmail.com",
-  phone: "9901616928",
+  
   github: "https://github.com/Anaghabhat28",
   linkedin: "https://www.linkedin.com/in/j-anagha-bhat-81557936a",
 };
@@ -139,7 +139,14 @@ export const hackathons: Activity[] = [
 ];
 
 /** Add internships or roles here as they happen. */
-export const internships: Activity[] = [];
+export const internships: Activity[] = [
+  {
+    title: "Web Development Intern",
+    organization: "Thiranex",
+    description:
+      "Currently working as a Web Development Intern at Thiranex, contributing to web development tasks and building practical, hands-on experience.",
+  },
+];
 
 export const experienceAreas: string[] = [
   "Technical projects",

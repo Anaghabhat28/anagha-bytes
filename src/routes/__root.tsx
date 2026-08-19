@@ -105,7 +105,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           name: profile.name,
           jobTitle: profile.title,
           email: `mailto:${profile.email}`,
-          telephone: profile.phone,
+          
           address: { "@type": "PostalAddress", addressRegion: "Karnataka", addressCountry: "IN" },
           alumniOf: { "@type": "CollegeOrUniversity", name: education.institution },
           sameAs: [profile.github, profile.linkedin],
