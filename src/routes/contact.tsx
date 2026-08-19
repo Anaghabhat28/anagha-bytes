@@ -244,15 +244,6 @@ function ContactPage() {
             </li>
             <li>
               <a
-                href={`tel:+91${profile.phone}`}
-                className="inline-flex items-center gap-3 font-medium text-foreground underline-offset-4 hover:underline"
-              >
-                <Phone aria-hidden="true" className="size-4 text-accent" />
-                Phone: {profile.phone}
-              </a>
-            </li>
-            <li>
-              <a
                 href={profile.github}
                 target="_blank"
                 rel="noreferrer noopener"
