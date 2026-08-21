@@ -42,8 +42,8 @@ function HomePage() {
           aria-hidden="true"
           className="glow-orb bottom-[-8rem] right-[-4rem] size-96 animate-float opacity-25"
         />
-        <div className="container-page relative grid gap-12 py-16 md:grid-cols-[1.2fr_0.8fr] md:items-center md:py-24">
-          <div className="animate-rise">
+        <div className="container-page relative grid-hero py-16 md:py-24">
+          <div data-area="copy" className="animate-rise">
             <p className="eyebrow">Portfolio</p>
             <h1
               id="hero-heading"
@@ -111,7 +111,7 @@ function HomePage() {
             </ul>
           </div>
 
-          <figure className="animate-rise m-0">
+          <figure data-area="media" className="animate-rise m-0">
             <div className="group relative overflow-hidden rounded-3xl border border-border bg-card shadow-card transition-transform duration-500">
               <img
                 src={avatarImage}
@@ -132,7 +132,7 @@ function HomePage() {
         <h2 id="featured-heading" className="text-2xl font-semibold text-foreground">
           Featured project
         </h2>
-        <div className="mt-6 grid items-start gap-6 sm:grid-cols-2">
+        <div className="mt-6 grid-bento">
           {featured.map((project) => (
             <article key={project.slug} className="card-surface-interactive overflow-hidden">
               <img
@@ -163,7 +163,7 @@ function HomePage() {
 
           <article className="card-surface p-6">
             <h3 className="text-lg font-semibold text-foreground">Areas of interest</h3>
-            <ul className="mt-4 flex flex-wrap gap-2">
+            <ul className="cluster mt-4">
               {interests.map((item) => (
                 <li key={item} className="chip">
                   {item}

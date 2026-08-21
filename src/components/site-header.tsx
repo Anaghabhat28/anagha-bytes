@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import { navigation, profile } from "@/data/portfolio";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 const linkBase =
   "rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground";
@@ -41,16 +42,20 @@ export function SiteHeader() {
           </ul>
         </nav>
 
-        <button
-          type="button"
-          onClick={() => setOpen((v) => !v)}
-          aria-expanded={open}
-          aria-controls="mobile-navigation"
-          className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-md border border-border text-foreground lg:hidden"
-        >
-          {open ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
-          <span className="sr-only">{open ? "Close menu" : "Open menu"}</span>
-        </button>
+        <div className="cluster">
+          <ThemeToggle />
+
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            aria-expanded={open}
+            aria-controls="mobile-navigation"
+            className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-md border border-border text-foreground lg:hidden"
+          >
+            {open ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
+            <span className="sr-only">{open ? "Close menu" : "Open menu"}</span>
+          </button>
+        </div>
       </div>
 
       {open ? (

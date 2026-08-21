@@ -290,3 +290,152 @@
   }
 }
 
+/* ==========================================================================
+   Layout architecture — hand-authored CSS Grid + Flexbox, mobile-first.
+   Breakpoint scale (em, so it scales with user font-size prefs):
+     30em  ≈ 480px   — large phone
+     48em  ≈ 768px   — tablet
+     64em  ≈ 1024px  — small desktop
+     80em  ≈ 1280px  — large desktop
+   ========================================================================== */
+
+/* --- Flexbox: local component alignment -------------------------------- */
+
+@utility cluster {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--cluster-gap, 0.75rem);
+}
+
+@utility split {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  @media (min-width: 48em) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+@utility stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--stack-gap, 1rem);
+}
+
+/* --- CSS Grid: two-dimensional page-level layouts ----------------------- */
+
+/* Hero section: media block stacks above copy on mobile, sits beside it
+   on tablet+, using named grid areas rather than source-order tricks. */
+@utility grid-hero {
+  display: grid;
+  grid-template-areas:
+    "media"
+    "copy";
+  gap: 3rem;
+
+  @media (min-width: 48em) {
+    grid-template-areas: "copy media";
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 3rem;
+  }
+}
+
+.grid-hero > [data-area="copy"] {
+  grid-area: copy;
+}
+
+.grid-hero > [data-area="media"] {
+  grid-area: media;
+}
+
+/* Responsive auto-fill card grid: columns grow on their own as space
+   allows, no breakpoint bookkeeping needed for the column count. */
+@utility grid-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+
+  @media (min-width: 30em) {
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
+  }
+}
+
+/* Bento-style featured grid on the home page: featured project spans two
+   columns on wide screens, interests card takes the remaining column. */
+@utility grid-bento {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+
+  @media (min-width: 40em) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 64em) {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+/* Footer: identity block and link cluster, stacked on mobile, split into
+   named regions on wider viewports. */
+@utility grid-footer {
+  display: grid;
+  grid-template-areas:
+    "identity"
+    "links";
+  gap: 1.5rem;
+
+  @media (min-width: 48em) {
+    grid-template-areas: "identity links";
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+}
+
+.grid-footer > [data-area="identity"] {
+  grid-area: identity;
+}
+
+.grid-footer > [data-area="links"] {
+  grid-area: links;
+  justify-self: start;
+
+  @media (min-width: 48em) {
+    justify-self: end;
+  }
+}
+
+/* --- Theme toggle --------------------------------------------------------
+   Light/dark state lives on the .dark class already defined above via the
+   --background/--foreground/etc. custom properties. This block only adds
+   the interactive control's own styling; the color values it switches
+   between are inherited from :root and .dark. */
+
+@utility theme-toggle {
+  display: inline-flex;
+  min-height: 2.75rem;
+  min-width: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-card);
+  color: var(--color-foreground);
+  transition:
+    background-color 200ms ease,
+    border-color 200ms ease,
+    transform 200ms ease;
+
+  &:hover {
+    border-color: color-mix(in oklab, var(--color-accent) 45%, var(--color-border));
+    transform: translateY(-1px);
+  }
+}
+

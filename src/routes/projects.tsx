@@ -32,7 +32,7 @@ function ProjectsPage() {
       />
 
       <div className="container-page py-16">
-        <ul className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <ul className="grid-cards">
           {projects.map((project, index) => (
             <li key={project.slug}>
               <article className="card-surface-interactive group flex h-full flex-col overflow-hidden">
@@ -62,7 +62,7 @@ function ProjectsPage() {
                   <h3 className="mt-5 text-xs font-semibold uppercase tracking-wider text-foreground">
                     Technologies
                   </h3>
-                  <ul className="mt-2 flex flex-wrap gap-2">
+                  <ul className="cluster mt-2">
                     {project.technologies.map((tech) => (
                       <li key={tech} className="chip text-xs">
                         {tech}
@@ -71,7 +71,7 @@ function ProjectsPage() {
                   </ul>
 
 
-                  <div className="mt-6 flex flex-wrap gap-3">
+                  <div className="cluster mt-6">
                     {project.github ? (
                       <a
                         href={project.github}

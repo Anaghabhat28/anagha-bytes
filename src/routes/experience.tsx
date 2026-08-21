@@ -42,7 +42,7 @@ function ExperiencePage() {
           <h2 id="building-heading" className="text-2xl font-semibold text-foreground">
             How I am building experience
           </h2>
-          <ul className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="mt-5 grid-cards">
             {experienceAreas.map((area) => (
               <li key={area} className="card-surface px-5 py-4 text-sm font-medium text-foreground">
                 {area}
@@ -73,7 +73,7 @@ function ExperiencePage() {
                     {item.description}
                   </p>
                   {item.details ? (
-                    <ul className="mt-3 flex flex-wrap gap-2">
+                    <ul className="cluster mt-3">
                       {item.details.map((detail) => (
                         <li
                           key={detail}

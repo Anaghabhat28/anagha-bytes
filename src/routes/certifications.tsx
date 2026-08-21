@@ -32,7 +32,7 @@ function CertificationsPage() {
       />
 
       <div className="container-page py-16">
-        <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <ul className="grid-cards">
           {certifications.map((cert) => (
             <li key={`${cert.name}-${cert.organization}`}>
               <article className="card-surface-interactive flex h-full flex-col p-6">

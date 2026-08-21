@@ -31,7 +31,7 @@ function SkillsPage() {
       />
 
       <div className="container-page py-16">
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid-cards">
           {skillGroups.map((group, index) => (
             <section
               key={group.title}
@@ -51,7 +51,7 @@ function SkillsPage() {
                 {group.title}
               </h2>
               <div aria-hidden="true" className="accent-rule mt-3 w-10" />
-              <ul className="relative mt-4 flex flex-wrap gap-2">
+              <ul className="cluster relative mt-4">
                 {group.items.map((item) => (
                   <li key={item} className="chip">
                     {item}
