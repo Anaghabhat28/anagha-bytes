@@ -7,7 +7,7 @@
 /*
  * Design system — J Anagha Bhat portfolio.
  * Deep navy + teal, warm neutral surfaces. All colors are oklch tokens.
- */
+ *
 
 @theme inline {
   --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
