@@ -85,15 +85,23 @@ export const projects: Project[] = [
     github: "https://github.com/Anaghabhat28/Recipe-book.git",
   },
   {
-    slug: "personal-portfolio",
-    title: "Personal Portfolio Website",
-    subtitle: "Accessible semantic portfolio",
-    description:
-      "An accessible, semantic HTML5 portfolio website designed to showcase my skills, projects, certifications, education, and achievements.",
-    technologies: ["HTML5", "CSS", "JavaScript"],
-    image: portfolioImage,
-    imageAlt: "Illustration of a website layout wireframe with placeholder blocks.",
-     github: "https://github.com/Anaghabhat28/anagha-bytes.git",
+    slug: "electrohack-4-0",
+
+title: "ELECTROHACK 4.0",
+
+subtitle: "AI-Based Tower Classification",
+
+description:
+
+"An AI-powered tower classification system developed during ELECTROHACK 4.0 to identify supporting and monopole towers from uploaded images using YOLOv8. The solution includes image-quality validation, object detection, confidence scores, and a web-based dashboard for visualizing detection results.",
+
+technologies: ["Python", "YOLOv8", "OpenCV", "FastAPI", "React", "JavaScript"],
+
+image: portfolioImage,
+
+imageAlt: "AI-based tower detection and classification dashboard.",
+
+github: "https://github.com/Anaghabhat28/ELECTROHACK",
   },
 ];
 
@@ -134,8 +142,8 @@ export const hackathons: Activity[] = [
     details: ["CTF", "OSINT", "Cybersecurity", "Vulnerability assessment concepts"],
   },
   {
-    title: "H & P PROJECTS Hackathon Global Challenges 2026",
-    description: "Registered for the H & P PROJECTS Hackathon Global Challenges 2026.",
+    title: "ELECTROHACK 4.0 Hackathon",
+    description: "Participated in ELECTROHACK 4.0, a 24-hour hackathon held at KSIT, Bengaluru, where I collaborated with a team to develop an AI-based tower classification solution.",
   },
 ];
 
